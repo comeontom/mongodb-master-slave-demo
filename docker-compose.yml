@@ -13,7 +13,7 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD:
 
   mongo-master:
-    image: mongo:3.6
+    image: mongo:4.1
     container_name: mongo-master
     ports:
       - "27017:27017"
@@ -22,7 +22,7 @@ services:
     command: mongod --master
 
   mongo-slave1:
-    image: mongo:3.6
+    image: mongo:4.1
     container_name: mongo-slave1
     ports:
       - "27117:27017"
@@ -31,7 +31,7 @@ services:
     command: mongod --slave --source mongo-master:27017
 
   mongo-slave2:
-    image: mongo:3.6
+    image: mongo:4.1
     container_name: mongo-slave2
     ports:
       - "27127:27017"
